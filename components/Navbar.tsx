@@ -8,8 +8,8 @@ interface NavbarItemProps {
 
 const NavbarItem = ({ link, text }: NavbarItemProps) => {
   return (
-    <li className=" text-center bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] rounded-2xl p-2">
-      <a href={link} className=" cursor-pointer ">
+    <li className="flex flex-col mb-4">
+      <a href={link} className="frutiger text-center bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] rounded-2xl p-2 shadow-[0px_6px_3px_rgba(0,0,0,0.2)] cursor-pointer">
         {text}
       </a>
     </li>
@@ -18,15 +18,15 @@ const NavbarItem = ({ link, text }: NavbarItemProps) => {
 
 const Navbar = () => {
   return (
-    <nav className="bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] p-4 rounded-2xl min-w-32">
+    <nav className=" max-md:hidden frutiger-2 bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] p-4 rounded-2xl min-w-32 shadow-[0px_6px_3px_rgba(0,0,0,0.2)]">
       <Image
         src={globe}
         alt="profile picture"
         width={480}
         height={480}
-        className="mb-4 border border-[rgba(255,255,255,0.5)] rounded-[8rem]"
+        className="mb-4 border border-[rgba(255,255,255,0.5)] rounded-[8rem] shadow-[0px_6px_3px_rgba(0,0,0,0.2)]"
       />
-      <ul className=" flex flex-col gap-4">
+      <ul>
         <NavbarItem link="/" text="Home" />
         <NavbarItem link="/" text="About me" />
         <NavbarItem link="/" text="Project" />
