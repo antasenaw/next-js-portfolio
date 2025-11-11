@@ -1,3 +1,6 @@
+import globe from "../public/globe.svg";
+import Image from "next/image";
+
 interface NavbarItemProps {
   link: string,
   text: string
@@ -5,17 +8,25 @@ interface NavbarItemProps {
 
 const NavbarItem = ({ link, text }: NavbarItemProps) => {
   return (
-    <li className=" text-center ">
-      <a href={link} />
-      {text}
+    <li className=" text-center bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] rounded-2xl p-2">
+      <a href={link} className=" cursor-pointer ">
+        {text}
+      </a>
     </li>
   )
 }
 
 const Navbar = () => {
   return (
-    <nav className="border-amber-50 border-2">
-      <ul className=" flex flex-col gap-2">
+    <nav className="bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] p-4 rounded-2xl min-w-32">
+      <Image
+        src={globe}
+        alt="profile picture"
+        width={480}
+        height={480}
+        className="mb-4 border border-[rgba(255,255,255,0.5)] rounded-[8rem]"
+      />
+      <ul className=" flex flex-col gap-4">
         <NavbarItem link="/" text="Home" />
         <NavbarItem link="/" text="About me" />
         <NavbarItem link="/" text="Project" />

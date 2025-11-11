@@ -20,7 +20,16 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-image: url("../public/bg3.png"); 
+  background-size: cover;       
+  background-position: center;
+  background-repeat: no-repeat; 
+  
+  min-height: 100vh;
+  
+  background-attachment: fixed;
+
+  color: white;
+
   font-family: Arial, Helvetica, sans-serif;
 }

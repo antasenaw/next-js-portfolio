@@ -4,8 +4,8 @@ import Main from "@/components/Main";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center">
-      <div className="flex gap-4">
+    <div className="flex h-screen items-center justify-center">
+      <div className="flex gap-4 max-h-4/5 max-w-1/2">
         <Navbar />
         <div className="flex flex-col gap-4">
           <Header />
