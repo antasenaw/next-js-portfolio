@@ -7,7 +7,8 @@ This site showcases my work and approach as a junior full-stack developer using 
 
 ## Built With
 - **Next.js**  
-- **Typescript**    
+- **Typescript**
+- **Tailwind** 
 
 ## Features
 - Clean responsive layout  
