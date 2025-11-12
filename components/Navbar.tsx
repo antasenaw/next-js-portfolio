@@ -2,16 +2,15 @@ import globe from "../public/globe.svg";
 import Image from "next/image";
 
 interface NavbarItemProps {
-  link: string,
   text: string
 }
 
-const NavbarItem = ({ link, text }: NavbarItemProps) => {
+const NavbarItem = ({ text }: NavbarItemProps) => {
   return (
     <li className="flex flex-col grow">
-      <a href={link} className="frutiger text-center bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] rounded-2xl p-2 shadow-[0px_6px_3px_rgba(0,0,0,0.2)] cursor-pointer">
+      <button className="frutiger text-center bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] rounded-2xl p-2 shadow-[0px_6px_3px_rgba(0,0,0,0.2)] cursor-pointer">
         {text}
-      </a>
+      </button>
     </li>
   )
 }
@@ -27,10 +26,10 @@ const Navbar = () => {
         className="max-md:hidden mb-4 border border-[rgba(255,255,255,0.5)] rounded-[8rem] shadow-[0px_6px_3px_rgba(0,0,0,0.2)]"
       />
       <ul className="flex flex-wrap md:flex-col md:flex-nowrap gap-4">
-        <NavbarItem link="/" text="Home" />
-        <NavbarItem link="#about" text="About me" />
-        <NavbarItem link="#projects" text="Project" />
-        <NavbarItem link="#contacts" text="Contacts" />
+        <NavbarItem text="Home" />
+        <NavbarItem text="About me" />
+        <NavbarItem text="Project" />
+        <NavbarItem text="Contacts" />
       </ul>
     </nav>
   )
