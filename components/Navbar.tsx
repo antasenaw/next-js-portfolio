@@ -1,21 +1,28 @@
 import globe from "../public/globe.svg";
 import Image from "next/image";
+import { RefProps } from "@/app/page";
 
 interface NavbarItemProps {
+  hook: React.RefObject<HTMLDivElement | null>,
   text: string
 }
 
-const NavbarItem = ({ text }: NavbarItemProps) => {
+const NavbarItem = ({ hook, text }: NavbarItemProps) => {
+  function scrollTo (hook: React.RefObject<HTMLDivElement | null>) {
+    hook.current?.scrollIntoView({behavior: "smooth", block: "start"});
+  }
+
   return (
     <li className="flex flex-col grow">
-      <button className="frutiger text-center bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] rounded-2xl p-2 shadow-[0px_6px_3px_rgba(0,0,0,0.2)] cursor-pointer">
+      <button onClick={() => scrollTo(hook)} className="frutiger text-center bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] rounded-2xl p-2 shadow-[0px_6px_3px_rgba(0,0,0,0.2)] cursor-pointer">
         {text}
       </button>
     </li>
   )
 }
 
-const Navbar = () => {
+
+const Navbar = ({ homeRef, aboutRef, projectsRef, contactsRef }: RefProps) => {
   return (
     <nav className="max-md:hidden frutiger-2 bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] p-4 rounded-2xl min-w-32 shadow-[0px_6px_3px_rgba(0,0,0,0.2)]">
       <Image
@@ -26,14 +33,13 @@ const Navbar = () => {
         className="max-md:hidden mb-4 border border-[rgba(255,255,255,0.5)] rounded-[8rem] shadow-[0px_6px_3px_rgba(0,0,0,0.2)]"
       />
       <ul className="flex flex-wrap md:flex-col md:flex-nowrap gap-4">
-        <NavbarItem text="Home" />
-        <NavbarItem text="About me" />
-        <NavbarItem text="Project" />
-        <NavbarItem text="Contacts" />
+        <NavbarItem hook={homeRef} text="Home" />
+        <NavbarItem hook={aboutRef} text="About me" />
+        <NavbarItem hook={projectsRef} text="Project" />
+        <NavbarItem hook={contactsRef} text="Contacts" />
       </ul>
     </nav>
   )
 }
-
 
 export default Navbar
