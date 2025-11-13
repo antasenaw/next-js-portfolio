@@ -10,9 +10,9 @@ interface SectionProps {
 const Section = ({ hook, title, content }: SectionProps) => {
   return (
     <section ref={hook} className='flex flex-col gap-4 md:gap-6'>
-      <h2 className=' frutiger text-center text-[1.125rem] md:text-2xl font-bold bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] rounded-2xl p-1 md:p-2 shadow-[0px_6px_3px_rgba(0,0,0,0.2)]'>{title}</h2>
-      <div className='frutiger-2 bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] rounded-2xl p-2 md:p-4 shadow-[0px_6px_3px_rgba(0,0,0,0.2)]'>
-        <p className='bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] rounded-2xl p-4 shadow-[0px_6px_3px_rgba(0,0,0,0.2)]'>{content}</p>
+      <h2 className='general-style frutiger text-center text-[1.125rem] md:text-2xl font-bold p-1 md:p-2'>{title}</h2>
+      <div className='general-style frutiger-2 p-2 md:p-4'>
+        <p className='general-style p-4 backdrop-blur-lg'>{content}</p>
       </div>
     </section>
   )

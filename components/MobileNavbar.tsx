@@ -14,7 +14,7 @@ const MobileNavbarItem = ({ hook, text, handler }: MobileNavbarItemProps) => {
   }
   return (
     <li className="flex flex-col grow" onClick={handler}>
-      <button onClick={() => scrollTo(hook)} className="frutiger text-center bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] rounded-2xl p-1 shadow-[0px_6px_3px_rgba(0,0,0,0.2)] cursor-pointer">
+      <button onClick={() => scrollTo(hook)} className="general-style frutiger text-center p-1 cursor-pointer">
         {text}
       </button>
     </li>
@@ -29,10 +29,10 @@ const MobileNavbar = ({ homeRef, aboutRef, projectsRef, contactsRef }: RefProps)
   }
 
   const newClass = `${display ? 'flex' : 'hidden'} flex-wrap flex-col gap-4`
-  const btnClass = `${display ? 'hidden' : 'flex'} frutiger flex justify-center bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] rounded-2xl p-1 shadow-[0px_6px_3px_rgba(0,0,0,0.2)] cursor-pointer`
+  const btnClass = `${display ? 'hidden' : 'flex'} general-style frutiger justify-center p-1 cursor-pointer`
   
   return (
-      <nav className='md:hidden flex flex-col bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] p-2 mx-4 rounded-b-2xl shadow-[0px_6px_3px_rgba(0,0,0,0.2)]'>
+      <nav className='md:hidden bg-[rgba(255,255,255,0.1)] shadow-[0px_6px_3px_rgba(0,0,0,0.2)] rounded-b-2xl flex flex-col p-2 mx-4'>
         <button onClick={handleSetDisplay} className={btnClass}>☰</button>
         <ul className={newClass}>
           <MobileNavbarItem hook={homeRef} text="Home" handler={handleSetDisplay}/>

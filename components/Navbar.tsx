@@ -14,7 +14,7 @@ const NavbarItem = ({ hook, text }: NavbarItemProps) => {
 
   return (
     <li className="flex flex-col grow">
-      <button onClick={() => scrollTo(hook)} className="frutiger text-center bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] rounded-2xl p-2 shadow-[0px_6px_3px_rgba(0,0,0,0.2)] cursor-pointer">
+      <button onClick={() => scrollTo(hook)} className="general-style frutiger text-center p-2 cursor-pointer">
         {text}
       </button>
     </li>
@@ -24,13 +24,13 @@ const NavbarItem = ({ hook, text }: NavbarItemProps) => {
 
 const Navbar = ({ homeRef, aboutRef, projectsRef, contactsRef }: RefProps) => {
   return (
-    <nav className="max-md:hidden frutiger-2 bg-[rgba(255,255,255,0.125)] border border-[rgba(255,255,255,0.5)] p-4 rounded-2xl min-w-32 shadow-[0px_6px_3px_rgba(0,0,0,0.2)]">
+    <nav className="general-style max-md:hidden frutiger-2 p-4 min-w-32">
       <Image
         src={globe}
         alt="profile picture"
         width={480}
         height={480}
-        className="max-md:hidden mb-4 border border-[rgba(255,255,255,0.5)] rounded-[8rem] shadow-[0px_6px_3px_rgba(0,0,0,0.2)]"
+        className="max-md:hidden mb-4 rounded-[8rem] shadow-[0px_6px_3px_rgba(0,0,0,0.2)]"
       />
       <ul className="flex flex-wrap md:flex-col md:flex-nowrap gap-4">
         <NavbarItem hook={homeRef} text="Home" />
