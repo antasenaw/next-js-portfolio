@@ -14,9 +14,9 @@ const MobileNavbarItem = ({ hook, text, handler }: MobileNavbarItemProps) => {
   }
   return (
     <li className="flex flex-col grow" onClick={handler}>
-      <button onClick={() => scrollTo(hook)} className="general-style frutiger text-center p-1 cursor-pointer">
+      <a onClick={() => scrollTo(hook)} className="general-style frutiger text-center p-1 cursor-pointer">
         {text}
-      </button>
+      </a>
     </li>
   )
 }
@@ -33,7 +33,7 @@ const MobileNavbar = () => {
   
   const { homeRef, aboutRef, projectsRef, contactsRef } = useRefContext();
   return (
-      <nav className='md:hidden bg-[rgba(255,255,255,0.1)] shadow-[0px_6px_3px_rgba(0,0,0,0.2)] rounded-b-2xl flex flex-col p-2 mx-4'>
+      <nav className='md:hidden general-style flex flex-col p-2'>
         <button onClick={handleSetDisplay} className={btnClass}>☰</button>
         <ul className={newClass}>
           <MobileNavbarItem hook={homeRef} text="Home" handler={handleSetDisplay}/>
