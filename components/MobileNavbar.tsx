@@ -10,11 +10,12 @@ interface MobileNavbarItemProps {
 
 const MobileNavbarItem = ({ hook, text, handler }: MobileNavbarItemProps) => {
   function scrollTo (hook: React.RefObject<HTMLDivElement | null>) {
+    {handler()}
     hook.current?.scrollIntoView({behavior: "smooth", block: "start"});
   }
   return (
-    <li className="flex flex-col grow" onClick={handler}>
-      <a onClick={() => scrollTo(hook)} className="general-style frutiger text-center p-1 cursor-pointer">
+    <li className="flex flex-col grow">
+      <a onClick={() => scrollTo(hook)} className="general-style frutiger text-center p-1 cursor-pointer hover:scale-110 transition duration-200 ease-in-out">
         {text}
       </a>
     </li>
@@ -29,7 +30,7 @@ const MobileNavbar = () => {
   }
   
   const newClass = `${display ? 'flex' : 'hidden'} flex-wrap flex-col gap-4`
-  const btnClass = `${display ? 'hidden' : 'flex'} general-style frutiger justify-center p-1 cursor-pointer`
+  const btnClass = `${display ? 'mb-4' : 'mb-0'} flex general-style frutiger justify-center p-1 cursor-pointer hover:scale-110 transition duration-200 ease-in-out`
   
   const { homeRef, aboutRef, projectsRef, contactsRef } = useRefContext();
   return (

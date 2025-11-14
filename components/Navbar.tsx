@@ -1,5 +1,5 @@
 "use client"
-import globe from "../public/globe.svg";
+import favicon from '@/app/favicon.ico'
 import Image from "next/image";
 import { useRefContext } from "@/hooks/NavigationRefContext";
 
@@ -15,7 +15,7 @@ const NavbarItem = ({ hook, text }: NavbarItemProps) => {
 
   return (
     <li className="flex flex-col grow">
-      <a onClick={() => scrollTo(hook)} className="general-style frutiger text-center p-2 cursor-pointer">
+      <a onClick={() => scrollTo(hook)} className="general-style frutiger text-center p-2 cursor-pointer hover:scale-110 transition duration-200 ease-in-out">
         {text}
       </a>
     </li>
@@ -29,11 +29,11 @@ const Navbar = () => {
   return (
     <nav className="general-style max-md:hidden frutiger-2 p-4 min-w-32">
       <Image
-        src={globe}
+        src={favicon}
         alt="profile picture"
         width={96}
         height={96}
-        className="max-md:hidden mb-4 rounded-[8rem] shadow-[0px_6px_3px_rgba(0,0,0,0.2)]"
+        className="max-md:hidden mb-4 rounded-[8rem] shadow-[0px_6px_3px_rgba(0,0,0,0.2)] hover:scale-110 transition duration-200 ease-in-out"
       />
       <ul className="flex flex-col md:flex-nowrap gap-4">
         <NavbarItem hook={homeRef} text="Home" />
