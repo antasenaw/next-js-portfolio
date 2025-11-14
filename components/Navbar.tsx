@@ -1,6 +1,7 @@
+"use client"
 import globe from "../public/globe.svg";
 import Image from "next/image";
-import { RefProps } from "@/app/page";
+import { useRefContext } from "@/hooks/NavigationRefContext";
 
 interface NavbarItemProps {
   hook: React.RefObject<HTMLDivElement | null>,
@@ -22,7 +23,9 @@ const NavbarItem = ({ hook, text }: NavbarItemProps) => {
 }
 
 
-const Navbar = ({ homeRef, aboutRef, projectsRef, contactsRef }: RefProps) => {
+const Navbar = () => {
+  const { homeRef, aboutRef, projectsRef, contactsRef } = useRefContext();
+
   return (
     <nav className="general-style max-md:hidden frutiger-2 p-4 min-w-32">
       <Image
