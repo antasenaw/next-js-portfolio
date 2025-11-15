@@ -1,5 +1,6 @@
 "use client"
 import React from 'react';
+import Image from 'next/image';
 import { useRefContext } from '../hooks/NavigationRefContext'
 
 interface SectionProps {
@@ -22,6 +23,11 @@ const Section = ({ hook, /*title,*/ content }: SectionProps) => {
   
 }
 
+const TECH_LIST = ['HTML', 'CSS', 'JavaScript', 'Nodejs', 'Express', 'Reactjs', 'Tailwind', 'TypeScript', 'Nextjs', 'MongoDB', 'REST API', 'Git', 'Vercel', 'Jest'];
+const getLogoPath = (techName: string) => {
+    return `/icons/${techName}.svg`; 
+};
+
 const Main = () => {
   const { homeRef, aboutRef, projectsRef, contactsRef } = useRefContext();
   return (
@@ -38,11 +44,26 @@ const Main = () => {
           <h2 className='font-bold text-2xl mb-3 '>About me</h2>
           <p className='mb-3'>As a Junior Full-Stack Developer, I specialize in crafting high-performance, user-centric, and scalable web applications. My comprehensive approach leverages a mastery of core web technologies (HTML, CSS, JavaScript) as the foundation for modern development. I am proficient across the full JavaScript stack, utilizing the powerful Next.js ecosystem (with serverless capabilities) or the traditional MERN Stack (React, Node.js/Express) to deliver robust solutions. I champion maintainable, type-safe code using TypeScript and ensure responsive, polished UI/UX on every project with Tailwind CSS, centralizing data management with MongoDB.</p>
           <h3 className='font-bold text-[1.25rem] mb-5'>Skills and Technologies</h3>
-          <div className='flex gap-4 flex-wrap'>
-            {['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express', 'React.js', 'Tailwind', 'TypeScript', 'Next.js', 'MongoDB'].map((tech, i) => {
+          <div className='grid md:grid-cols-7 grid-cols-3 gap-4'>
+            {TECH_LIST.map((slug, i) => {
+              let techNameDisplay = slug.charAt(0) + slug.slice(1).replace('js', '.js');
+              if (techNameDisplay === 'Git') {
+                techNameDisplay = 'Git/GitHub';
+              }
+              
               return (
-                <div className='general-style p-2' key={i}>
-                  {tech}
+                <div 
+                  className='flex flex-col frutiger-2 items-center general-style p-2 hover:font-bold active:scale-95 hover:scale-110 transition duration-200 ease-in-out' 
+                  key={i}
+                >
+                  <Image
+                    src={getLogoPath(slug)}
+                    alt={`${techNameDisplay} logo`}
+                    width={48}
+                    height={48}
+                    className='my-1'
+                  />
+                  {techNameDisplay}
                 </div>
               );
             })}

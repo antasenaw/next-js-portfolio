@@ -33,7 +33,7 @@ const Navbar = () => {
         alt="profile picture"
         width={96}
         height={96}
-        className="max-md:hidden mb-4 rounded-[8rem] shadow-[0px_6px_3px_rgba(0,0,0,0.2)] hover:scale-110 transition duration-200 ease-in-out"
+        className="max-md:hidden mb-4 rounded-[8rem] shadow-[0px_6px_3px_rgba(0,0,0,0.2)] active:scale-95 hover:scale-110 transition duration-200 ease-in-out"
       />
       <ul className="flex flex-col md:flex-nowrap gap-4">
         <NavbarItem hook={homeRef} text="Home" />
