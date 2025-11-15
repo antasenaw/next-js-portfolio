@@ -15,7 +15,7 @@ const NavbarItem = ({ hook, text }: NavbarItemProps) => {
 
   return (
     <li className="flex flex-col grow">
-      <a onClick={() => scrollTo(hook)} className="general-style frutiger text-center p-2 cursor-pointer hover:scale-110 transition duration-200 ease-in-out">
+      <a onClick={() => scrollTo(hook)} className="general-style frutiger text-center p-2 cursor-pointer hover:font-bold active:scale-90 hover:scale-110 transition duration-200 ease-in-out">
         {text}
       </a>
     </li>

@@ -15,7 +15,7 @@ const MobileNavbarItem = ({ hook, text, handler }: MobileNavbarItemProps) => {
   }
   return (
     <li className="flex flex-col grow">
-      <a onClick={() => scrollTo(hook)} className="general-style frutiger text-center p-1 cursor-pointer hover:scale-110 transition duration-200 ease-in-out">
+      <a onClick={() => scrollTo(hook)} className="general-style frutiger text-center p-1 cursor-pointer active:font-bold active:scale-90 hover:scale-110 transition duration-200 ease-in-out">
         {text}
       </a>
     </li>
@@ -30,7 +30,7 @@ const MobileNavbar = () => {
   }
   
   const newClass = `${display ? 'flex' : 'hidden'} flex-wrap flex-col gap-4`
-  const btnClass = `${display ? 'mb-4' : 'mb-0'} flex general-style frutiger justify-center p-1 cursor-pointer hover:scale-110 transition duration-200 ease-in-out`
+  const btnClass = `${display ? 'mb-4' : 'mb-0'} flex general-style frutiger justify-center p-1 cursor-pointer active:font-bold active:scale-90 hover:scale-110 transition duration-200 ease-in-out`
   
   const { homeRef, aboutRef, projectsRef, contactsRef } = useRefContext();
   return (
