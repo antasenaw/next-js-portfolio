@@ -8,7 +8,7 @@ import "./Page.css";
 export default function Home() {
   return (
     <div className="flex h-screen items-center justify-center">
-      <div className="max-md:rounded-none  general-style flex gap-4 max-h-screen max-w-screen md:max-h-4/5 md:max-w-5xl md:m-8 m-0 p-4 md:p-4">
+      <div className="max-md:rounded-none flex gap-4 max-h-screen max-w-screen md:max-h-4/5 md:max-w-5xl md:m-8 m-0 p-4 md:p-6">
         <RefProvider>
           <Navbar />
           <div className="flex flex-col gap-4 md:gap-6 page rounded-2xl">
